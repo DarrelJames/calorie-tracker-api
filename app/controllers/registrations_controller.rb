@@ -3,6 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
     begin
+
       super
     rescue ActiveRecord::RecordInvalid => e
       render_resource(e.record)
@@ -10,6 +11,6 @@ class RegistrationsController < Devise::RegistrationsController
       err = OpenStruct.new(errors: { user: 'Already Exists' })
       validation_error(err)
     end
-    
+
   end
 end

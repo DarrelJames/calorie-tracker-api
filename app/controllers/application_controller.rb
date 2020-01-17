@@ -3,6 +3,9 @@ class ApplicationController < ActionController::API
 rescue_from ActiveRecord::RecordNotFound, with: :not_found
 rescue_from AuthorizationError, with: :unauthorized_error
 
+before_action :configure_permitted_parameters, if: :devise_controller?
+
+
   def render_resource(resource, with: nil)
     if resource.errors.empty?
       render json: resource
@@ -34,5 +37,11 @@ rescue_from AuthorizationError, with: :unauthorized_error
 
   def not_found
     render json: { message: 'Resource not found'}, status: 404
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 end
