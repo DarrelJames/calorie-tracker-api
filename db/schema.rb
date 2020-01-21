@@ -43,10 +43,10 @@ ActiveRecord::Schema.define(version: 2020_01_21_041817) do
   end
 
   create_table "goals", force: :cascade do |t|
-    t.integer "carbs"
-    t.integer "fat"
-    t.integer "protein"
-    t.integer "calories"
+    t.integer "carbs", default: 0
+    t.integer "fat", default: 0
+    t.integer "protein", default: 0
+    t.integer "calories", default: 0
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
