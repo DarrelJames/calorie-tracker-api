@@ -2,8 +2,9 @@ class EntriesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    binding.pry
+    l = Log.last
     entry = Entry.new(entry_params)
+    entry.log = l
     entry.save
     render_resource(entry)
   end
