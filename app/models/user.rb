@@ -7,4 +7,16 @@ class User < ApplicationRecord
   devise :database_authenticatable,
           :registerable,
          :jwt_authenticatable, jwt_revocation_strategy: JwtBlacklist
+
+  after_create :build_associations
+
+  def goal
+    super || create_goal
+  end
+
+  private
+
+  def build_associations
+    goal || true
+  end
 end
