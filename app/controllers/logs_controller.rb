@@ -3,7 +3,7 @@ class LogsController < ApplicationController
 
   def index
     logs = current_user.logs
-    render json: logs, include: [:entries]
+    render json: logs
   end
 
   def show
