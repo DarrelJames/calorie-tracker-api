@@ -10,22 +10,22 @@ c = u.logs.create(date: '2020-01-21')
 5.times do
   e = a.entries.create(category: categories.sample)
 
-  10.times do
-    e.foods.create(label: Faker::Food.sushi)
+  (1..5).to_a.sample.times do
+    e.foods.create(label: Faker::Food.sushi, protein: Faker::Number.within(range: 0..100), calories: Faker::Number.within(range: 0..100), fat: Faker::Number.within(range: 0..100), carbs: Faker::Number.within(range: 0..100))
   end
 end
 5.times do
   e = b.entries.create(category: categories.sample)
 
-  10.times do
-    e.foods.create(label: Faker::Food.sushi)
+  (1..5).to_a.sample.times do
+    e.foods.create(label: Faker::Food.sushi, protein: Faker::Number.within(range: 0..100), calories: Faker::Number.within(range: 0..100), fat: Faker::Number.within(range: 0..100), carbs: Faker::Number.within(range: 0..100))
   end
 end
 5.times do
   e = c.entries.create(category: categories.sample)
 
-  10.times do
-    e.foods.create(label: Faker::Food.sushi)
+  (1..5).to_a.sample.times do
+    e.foods.create(label: Faker::Food.sushi, protein: Faker::Number.within(range: 0..100), calories: Faker::Number.within(range: 0..100), fat: Faker::Number.within(range: 0..100), carbs: Faker::Number.within(range: 0..100))
   end
 end
 
