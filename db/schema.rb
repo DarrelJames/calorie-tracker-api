@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2020_01_21_041817) do
   end
 
   create_table "logs", force: :cascade do |t|
-    t.string "date", default: "01-22-2020"
+    t.string "date", default: "2020-01-22"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
