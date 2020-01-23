@@ -6,8 +6,8 @@ class LogsController < ApplicationController
     render json: logs
   end
 
-  def show
-    log = current_user.logs.find_by(date: params[:id])
+  def show    
+    log = current_user.logs.find_or_create_by(date: params[:id])
     authorize_user_resource(log)
     render_resource(log)
   end
