@@ -2,9 +2,9 @@ u = User.create(name: 'dj', email: 'test@email.com', password: 'password')
 
 categories = ['Breakfast', 'Lunch', 'Dinner', 'Snacks']
 
-a = u.logs.create(date: '2020-01-19')
-b = u.logs.create(date: '2020-01-20')
-c = u.logs.create(date: '2020-01-21')
+a = u.logs.create(date: '01-19-2020')
+b = u.logs.create(date: '01-20-2020')
+c = u.logs.create
 
 
 5.times do
