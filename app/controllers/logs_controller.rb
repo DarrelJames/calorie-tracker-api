@@ -7,17 +7,18 @@ class LogsController < ApplicationController
   end
 
   def show
-    log = Log.find(params:id)
+    log = current_user.logs.find_by(date: params[:id])
     authorize_user_resource(log)
     render_resource(log)
   end
 
-  def create
-    log = Log.new(log_params)
-    log.user = current_user
-    log.save
-    render_resource(log)
-  end
+  # def create
+  #   binding.pry
+  #   log = Log.new(log_params)
+  #   log.user = current_user
+  #   log.save
+  #   render_resource(log)
+  # end
 
   private
 
