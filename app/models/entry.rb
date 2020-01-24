@@ -1,6 +1,6 @@
 class Entry < ApplicationRecord
   belongs_to :log
-  has_many :entries_foods
+  has_many :entries_foods, dependent: :destroy
   has_many :foods, through: :entries_foods
 
   def foods_attributes=(foods_attributes)
