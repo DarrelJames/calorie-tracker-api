@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_01_24_012752) do
     t.bigint "log_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.float "servings"
+    t.float "servings", default: 1.0
     t.index ["log_id"], name: "index_entries_on_log_id"
   end
 
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2020_01_24_012752) do
   end
 
   create_table "logs", force: :cascade do |t|
-    t.string "date", default: "2020-01-22"
+    t.string "date", default: "2020-01-23"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
