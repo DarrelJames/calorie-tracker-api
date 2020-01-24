@@ -12,7 +12,7 @@ class EntriesController < ApplicationController
     entry = Entry.find(params[:id])
     authorize_user_resource(entry.log)
     entry.update(entry_params)
-    render_resource(entry.log)
+    render_resource(entry)
   end
 
   def destroy
