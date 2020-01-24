@@ -3,7 +3,7 @@ class LogSerializer < ActiveModel::Serializer
   has_many :entries
 
   class EntrySerializer < ActiveModel::Serializer
-    attributes :id, :category
+    attributes :id, :category, :servings
 
     has_many :foods
 
