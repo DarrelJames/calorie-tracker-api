@@ -5,7 +5,7 @@ class EntriesController < ApplicationController
     log = Log.find(params[:log_id])
     entry = log.entries.build(entry_params)
     entry.save
-    render_resource(log)
+    render_resource(entry)
   end
 
   def update
@@ -18,9 +18,9 @@ class EntriesController < ApplicationController
   def destroy
     entry = Entry.find(params[:id])
     log = entry.log
-    authorize_user_resource(entry.log)
+    authorize_user_resource(log)
     entry.destroy
-    render_resource(log)
+
   end
 
   private
