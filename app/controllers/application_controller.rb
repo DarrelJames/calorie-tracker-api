@@ -15,15 +15,15 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   end
 
   def validation_error(resource)
+    sleep(3)
     render json: {
-      errors: [
-        {
+      errors: {
           status: '400',
           title: 'Bad Request',
           detail: resource.errors,
           code: '100'
         }
-      ]
+
     }, status: :bad_request
   end
 
