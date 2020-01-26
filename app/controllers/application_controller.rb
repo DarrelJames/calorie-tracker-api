@@ -8,7 +8,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   def fallback_index_html
     render :file => 'public/index.html'
   end
-  
+
   def render_resource(resource, with: nil)
     if resource.errors.empty?
       render json: resource
@@ -18,7 +18,6 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   end
 
   def validation_error(resource)
-    sleep(3)
     render json: {
       errors: {
           status: '400',
