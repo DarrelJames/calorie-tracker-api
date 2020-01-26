@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :entries
   resources :logs
+  resources :goals, only: [:index, :update]
   devise_for :users,
              path: '',
              path_names: {
