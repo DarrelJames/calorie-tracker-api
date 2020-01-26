@@ -6,7 +6,7 @@ const url = {
 }
 
 const instance = axios.create({
-  baseURL: 'url.production'
+  baseURL: ''
 })
 
 export default instance

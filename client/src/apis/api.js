@@ -4,7 +4,7 @@ const url = {
   production: ''
 }
 const instance = axios.create({
-  baseURL: url.production
+  baseURL: ''
 })
 instance.interceptors.request.use(config => {
   const token = localStorage.getItem('token');
