@@ -1,7 +1,10 @@
 import axios from 'axios'
-
+const url = {
+  development: 'http://localhost:3001',
+  production: ''
+}
 const instance = axios.create({
-  baseURL: 'http://localhost:3001'
+  baseURL: url.production
 })
 instance.interceptors.request.use(config => {
   const token = localStorage.getItem('token');

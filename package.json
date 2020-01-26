@@ -4,5 +4,15 @@
   "main": "index.js",
   "repository": "git@github.com:DarrelJames/calorie-tracker-api.git",
   "author": "Darrel Castellano <dcastellano2007@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "cd client && yarn install && yarn build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "yarn build && yarn deploy && echo 'Client built!'"
+  },
+  "engines": {
+    "yarn": "1.21.1",
+    "npm": "6.13.6",
+    "node": "13.0.1"
+  },
 }

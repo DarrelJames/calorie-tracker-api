@@ -5,7 +5,10 @@ rescue_from AuthorizationError, with: :unauthorized_error
 
 before_action :configure_permitted_parameters, if: :devise_controller?
 
-
+  def fallback_index_html
+    render :file => 'public/index.html'
+  end
+  
   def render_resource(resource, with: nil)
     if resource.errors.empty?
       render json: resource

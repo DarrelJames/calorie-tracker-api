@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :goals
-  resources :foods
   resources :entries
   resources :logs
   devise_for :users,
@@ -16,7 +14,7 @@ Rails.application.routes.draw do
              }
   root to: "home#index"
 
-  resources :users do
-    resource :logs
+  get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+    !request.xhr? && request.format.html?
   end
 end
